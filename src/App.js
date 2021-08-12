@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Router, Route, Switch } from "react-router-dom";
+import React, { useEffect } from "react";
+import Home from "./components/Home";
+import SignIN from "./components/SignIn";
+import history from "./history";
+
+import "./App.css";
 
 function App() {
+  useEffect(() => {
+    let token = localStorage.getItem("token");
+    if (token) {
+      history.push("/home");
+    } else {
+      history.push("/");
+    }
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={history}>
+      <Switch>
+        <Route exact path="/" component={SignIN} />
+        <Route path="/home" component={Home} />
+      </Switch>
+    </Router>
   );
 }
 
