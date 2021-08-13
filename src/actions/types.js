@@ -3,3 +3,6 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const GET_ERRORS = "GET_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const MOVIES_SUCCESS = "MOVIES_SUCCESS";
+export const MOVIES_FAIL = "MOVIES_FAIL";
+export const MOVIES_NEXTPREV = "MOVIES_NEXTPREV";
