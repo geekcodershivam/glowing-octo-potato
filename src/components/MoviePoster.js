@@ -1,10 +1,8 @@
-import React from 'react';
-import CardMedia from '@material-ui/core/CardMedia';
+import React from "react";
+import CardMedia from "@material-ui/core/CardMedia";
 
-
-
-export default function MoviePoster(props){
-  const {height, width,name } = props;
+export default function MoviePoster(props) {
+  const { height, width, name } = props;
   const imageStyle = {};
   if (height) {
     imageStyle.height = height;
@@ -12,9 +10,7 @@ export default function MoviePoster(props){
   if (width) {
     imageStyle.width = width;
   }
-  const path=`https://ui-avatars.com/api/?name=${name}`
+  const path = `https://ui-avatars.com/api/?name=${name}`;
 
-  return (
-    <CardMedia image={path} style={imageStyle} />
-  ) 
-};
+  return <CardMedia image={path} style={imageStyle} />;
+}
