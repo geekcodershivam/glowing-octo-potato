@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import SignIN from "./components/SignIn";
 import history from "./history";
 import { connect } from "react-redux";
-import { fetch_movies,fetch_NextPrev } from "./actions/moviesActions";
+import { fetch_movies } from "./actions/moviesActions";
 import "./App.css";
 
 function App(props) {
@@ -12,7 +12,6 @@ function App(props) {
     let token = localStorage.getItem("token");
     if (token) {
       props.fetch_movies()
-      props.fetch_NextPrev(12)
       history.push("/home");
     } else {
       history.push("/");
@@ -27,4 +26,4 @@ function App(props) {
     </Router>
   );
 }
-export default connect(null, {fetch_movies,fetch_NextPrev })(App);
+export default connect(null, {fetch_movies })(App);

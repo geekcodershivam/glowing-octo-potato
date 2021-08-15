@@ -137,4 +137,4 @@ function SignIn(props) {
 const mapStateToProps = (state, ownProps) => {
   return { error: state.error, errorMsg: state.error.msg };
 };
-export default connect(mapStateToProps, { SignIN })(SignIn);
+export default connect(mapStateToProps, { SignIN})(SignIn);

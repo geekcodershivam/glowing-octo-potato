@@ -2,13 +2,13 @@ import { MOVIES_SUCCESS, MOVIES_FAIL, MOVIES_NEXTPREV } from "./types";
 import axios from "axios";
 
 import { returnErrors } from "./errorActions";
-let token = localStorage.getItem("token");
+
 export const fetch_movies = () => (dispatch) => {
   axios({
     method: "GET",
     url: "https://demo.credy.in/api/v1/maya/movies/",
     headers: {
-      Authorization: `Token ${token}`,
+      Authorization: `Token ${localStorage.getItem("token")}`,
     },
   })
     .then((res) => {
@@ -37,7 +37,7 @@ export const fetch_NextPrev = (pageNo) => (dispatch) => {
       ? `https://demo.credy.in/api/v1/maya/movies/?page=${pageNo}`
       : `https://demo.credy.in/api/v1/maya/movies/`,
     headers: {
-      Authorization: `Token ${token}`,
+      Authorization: `Token ${localStorage.getItem("token")}`,
     },
   })
     .then((res) => {

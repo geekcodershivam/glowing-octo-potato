@@ -18,11 +18,14 @@ export const SignIN = (data) => (dispatch) => {
         payload: res.data.data,
       });
       history.push("/home");
+      
     })
     .catch((err) => {
+      
       dispatch(
         returnErrors(err.response.data.error, err.response.status, "LOGIN_FAIL")
       );
+
       dispatch({
         type: LOGIN_FAIL,
       });
@@ -33,4 +36,5 @@ export const logout = () => {
   return {
     type: LOGOUT_SUCCESS,
   };
+ 
 };
